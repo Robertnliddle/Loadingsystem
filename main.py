@@ -46,18 +46,18 @@ while correct_items < items_to_be_shipped:
         break
     elif item_weight < 1 or item_weight > 10:
         print("You must enter a weight between 1 and 10")
-    continue
-else:
-    correct_items += 1
-    package_weight += item_weight
-    if package_weight > 20:
-        package_weight -= item_weight
-        packages_sent += 1
-        weight_sent += package_weight
-        if package_weight < lightest_package:
-            lightest_package = package_weight
-            index_most_empty_package = packages_sent
-            package_weight = item_weight
+        continue
+    else:
+        correct_items += 1
+        package_weight += item_weight
+        if package_weight > 20:
+            package_weight -= item_weight
+            packages_sent += 1
+            weight_sent += package_weight
+            if package_weight < lightest_package:
+                lightest_package = package_weight
+                index_most_empty_package = packages_sent
+                package_weight = item_weight
 
 if package_weight > 0:
     packages_sent += 1
